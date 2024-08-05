@@ -51,15 +51,15 @@ function LoaderCustom() {
       currentAssets.current = itemsLoaded;
       setMaxAssets(Math.max(itemsTotal, maxAssets));
       setLoadedAssets(itemsLoaded);
-      console.log(
-        'Loading file: ' +
-          url +
-          '.\nLoaded ' +
-          itemsLoaded +
-          ' of ' +
-          itemsTotal +
-          ' files.'
-      );
+      // console.log(
+      //   'Loading file: ' +
+      //     url +
+      //     '.\nLoaded ' +
+      //     itemsLoaded +
+      //     ' of ' +
+      //     itemsTotal +
+      //     ' files.'
+      // );
     };
 
     // THREE.DefaultLoadingManager.onError = function (url) {
@@ -72,7 +72,7 @@ function LoaderCustom() {
   // }, [setIsScrollLocked]);
 
   // const [isExitTransitionStart, setIsExitTransitionStart] = useState(false);
-  const [isAssetLoaded, setIsAssetLoaded] = useState(false);
+  // const [isAssetLoaded, setIsAssetLoaded] = useState(false);
 
   useGSAP(() => {
     if (loadedAssets >= maxAssets || currentAssets.current >= maxAssets) {

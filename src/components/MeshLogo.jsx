@@ -3,7 +3,6 @@ import { useRef, useMemo, useEffect } from 'react';
 import * as THREE from 'three';
 import logo from '/assets/images/logo.webp';
 import { v4 as uuidv4 } from 'uuid';
-import { useControls } from 'leva';
 import gsap from 'gsap';
 import { useStore } from '../App';
 // const lerp = (start, end, t) => {

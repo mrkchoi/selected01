@@ -1,11 +1,7 @@
 import { Suspense, useEffect, useState, useRef } from 'react';
 import Lenis from 'lenis';
-import { Canvas, addEffect } from '@react-three/fiber';
-import {
-  OrthographicCamera,
-  OrbitControls,
-  PerspectiveCamera,
-} from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { OrthographicCamera } from '@react-three/drei';
 import { EffectComposer, Noise } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import { useStore } from '../App';
@@ -156,7 +152,7 @@ let targetMouse = { x: 0, y: 0 };
 
 // Reference: https://selectedbase.com/artists
 function Artists() {
-  const activeCursor = useStore((state) => state.activeCursor);
+  // const activeCursor = useStore((state) => state.activeCursor);
   const setActiveCursor = useStore((state) => state.setActiveCursor);
   const isScrollLocked = useStore((state) => state.isScrollLocked);
   const isLoaded = useStore((state) => state.isLoaded);

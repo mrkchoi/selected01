@@ -1,0 +1,312 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* LENIS SETUP - START */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+/* LENIS SETUP - END */
+
+@font-face {
+  font-family: 'Sohne Bold';
+  src: url('./assets/fonts/sohne--extrabold.woff2');
+}
+@font-face {
+  font-family: 'Sohne Medium';
+  src: url('./assets/fonts/sohne--medium.woff2');
+}
+@font-face {
+  font-family: 'Sohne Normal';
+  src: url('./assets/fonts/sohne--normal.woff2');
+}
+
+.artists__main {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Sohne Normal', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.artists__scrollable {
+  position: absolute;
+  width: 100%;
+  /* height: 200vh; */
+  top: 0;
+  left: 0;
+  z-index: 1;
+  will-change: transform;
+}
+.artists__canvasWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.artists__canvasWrapper canvas {
+  pointer-events: none;
+}
+
+.artists__header {
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+}
+.artists__headerLogoWrapper {
+}
+.artists__headerLogoLink {
+  font-size: 2rem;
+  font-family: 'Sohne Medium', sans-serif;
+}
+.artists__headerMenuWrapper {
+}
+.artists__headerMenuBtn {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.artists__heroWrapper {
+  padding-top: 12rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.artists__heroTitle {
+  font-size: max(2rem, 2.5vw);
+  font-family: 'Sohne Bold', sans-serif;
+  /* max-width: max(50%, 20vw); */
+  text-align: center;
+  line-height: max(2rem, 2.5vw);
+}
+.artists__heroTitle span {
+  display: block;
+}
+.artists__contentWrapper {
+  width: 100%;
+}
+.artists__content {
+  width: 100%;
+  padding: 3rem;
+}
+.artists__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.artists__listItem {
+  position: relative;
+  overflow: hidden;
+}
+.artists__listItemLink {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: max(1rem, 1vw) 0;
+}
+.artists__listItemBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: -1; */
+  background-color: black;
+  opacity: 0.1;
+  will-change: transform;
+  pointer-events: none;
+  transform: translate3d(0, -100%, 0);
+  /* transition: all 0.2s ease-in-out; */
+}
+.artists__itemLeftWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+}
+.artists__itemArrow {
+  width: 0;
+  will-change: transform width;
+  transition: all 0.2s ease-in-out;
+  /* transform: translate3d(-150%, 0, 0); */
+}
+.artists__listItem:hover .artists__itemArrow {
+  width: 20px;
+  /* transform: translate3d(0, 0, 0); */
+}
+.artists__itemTitle {
+  font-size: max(1rem, 1.75vw);
+  font-family: 'Sohne Bold', sans-serif;
+}
+.artists__itemRightWrapper {
+}
+.artists__itemReleases {
+  font-size: 0.8rem;
+  font-family: 'Sohne Normal', sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  padding-right: 0.5rem;
+}
+.artists__imgWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* transition: all 0.2s ease-in-out; */
+  z-index: 100;
+  will-change: transform;
+}
+.artists__img {
+  max-height: min(40vw, 40vh, 500px);
+}
+
+.artists__logo {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+/* .artists__listItem:hover .artists__imgWrapper {
+  opacity: 0.85;
+} */
+.artists__footerWrapper {
+  width: 100%;
+  height: 80vh;
+  background-color: black;
+  color: white;
+  padding: 3rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.artists__footerTop {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+}
+.artists__footerTopSubtitle {
+  font-size: max(0.85rem, 1vw);
+  text-transform: uppercase;
+}
+.artists__footerTopTitle {
+  font-size: max(2rem, 3.5vw);
+  line-height: max(2rem, 3.5vw);
+  text-transform: uppercase;
+  font-family: 'Sohne Bold', sans-serif;
+  margin-top: 1rem;
+}
+.artists__footerTopTitle span {
+  display: block;
+}
+.artists__footerBottom {
+}
+.artists__footerBottomLogo {
+  width: 100%;
+  font-size: 20vw;
+  line-height: 20vw;
+  font-family: 'Sohne Medium', sans-serif;
+}
+.artists__main {
+}
+.artists__main {
+}
+.artists__main {
+}
+.artists__main {
+}
+.artists__main {
+}
+.artists__main {
+}
+
+/* CUSTOM CURSOR - START */
+.circle {
+  --circle-size: 24px;
+  --color1: rgba(225, 225, 225, 0.8);
+  --color2: rgba(0, 0, 0, 0.5);
+  /* --circle-size: 36px; */
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1px solid var(--color1);
+  color: var(--color1);
+  /* backdrop-filter: blur(10px); */
+  border-radius: 100%;
+  /* add drop shadow */
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+  /* background-color: var(--color1); */
+  /* backdrop-filter: blur(10px); */
+  /* background-color: transparent; */
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  will-change: transform;
+  transition:
+    width 0.3s ease-in-out,
+    height 0.3s ease-in-out,
+    top 0.3s ease-in-out,
+    left 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+  /* text-transform: lowercase; */
+  /* text-transform: uppercase; */
+  /* font-size: 1rem; */
+  font-weight: 200;
+  mix-blend-mode: multiply;
+}
+
+.circle.active {
+  --circle-size-active: 48px;
+  /* background-color: var(--color1); */
+  /* backdrop-filter: blur(10px); */
+  border: 1px solid var(--color1);
+  height: var(--circle-size-active);
+  width: var(--circle-size-active);
+  top: calc(var(--circle-size-active) / 2 * -1);
+  left: calc(var(--circle-size-active) / 2 * -1);
+}
+
+.circle .circleText {
+  font-size: 0.8rem;
+  color: transparent;
+  transition: color 0.3s ease-in-out;
+}
+.circle.active .circleText {
+  color: var(--color2);
+}
+/* CUSTOM CURSOR - END */
